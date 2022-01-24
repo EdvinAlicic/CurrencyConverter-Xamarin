@@ -4,9 +4,7 @@
              x:Class="RMAProjekat.KursnaLista">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label HorizontalOptions="StartAndExpand" Margin="40" TextColor="Black" FontSize="16" FontAttributes="Bold">Kursna lista</Label>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
