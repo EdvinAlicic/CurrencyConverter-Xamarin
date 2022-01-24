@@ -4,11 +4,11 @@
              x:Class="RMAProjekat.RegisterPage">
     <ContentPage.Content>
         <StackLayout VerticalOptions="Center"  HorizontalOptions="FillAndExpand" Margin="40">
-            <Entry Placeholder="Name"></Entry>
-            <Entry Placeholder="Surname"></Entry>
-            <Entry Placeholder="Username"></Entry>
-            <Entry x:Name="txtRegisterPassword1" Placeholder="Password" IsPassword="True"></Entry>
-            <Entry x:Name="txtRegisterPassword2" Placeholder="Confirm Password" IsPassword="True"></Entry>
+            <Entry x:Name="txtName" Placeholder="Ime"></Entry>
+            <Entry x:Name="txtSurname" Placeholder="Prezime"></Entry>
+            <Entry x:Name="txtUserName" Placeholder="Korisnicko ime"></Entry>
+            <Entry x:Name="txtRegisterPassword1" Placeholder="Sifra" IsPassword="True"></Entry>
+            <Entry x:Name="txtRegisterPassword2" Placeholder="Ponovite sifru" IsPassword="True"></Entry>
             <Button
                 Margin="20"
                 VerticalOptions="Center"

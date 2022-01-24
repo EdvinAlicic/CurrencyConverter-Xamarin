@@ -1,5 +1,8 @@
-﻿using System;
+﻿using RMAProjekat.Tables;
+using SQLite;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,13 +22,20 @@ namespace RMAProjekat
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            if(txtUsername.Text=="admin" && txtPassword.Text == "123")
+           var dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "UserDatabase.db");
+            var db = new SQLiteConnection(dbpath);
+            db.CreateTable<RegUserTable>();
+            var myquery = db.Table<RegUserTable>().Where(u => u.UserName.Equals(txtUsername.Text) && u.Password1.Equals(txtPassword.Text)).FirstOrDefault();
+            if (myquery != null)
             {
                 Navigation.PushAsync(new FlyoutPage1());
             }
             else
             {
-                DisplayAlert("Neispravni podaci", "Unesite ponovo", "Ok");
+                Device.BeginInvokeOnMainThread(async () =>
+                {
+                    DisplayAlert("Neuspjesna prijava", "Unesite ponovo podatke", "Ok");
+                });
             }
         }
 
